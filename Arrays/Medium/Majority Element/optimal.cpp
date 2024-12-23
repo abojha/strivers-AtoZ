@@ -3,23 +3,25 @@
 using namespace std;
 
 int majorityElement(vector<int> &arr, int k){
-    map<int, int> countOccurrences;
-    int n = arr.size();
+    int count = 0;
+    int element = 0;
 
     for(int i = 0; i < arr.size(); i++){
-        countOccurrences[arr[i]]++;
-    }
-
-    for(auto count : countOccurrences){
-        if(count.second > n/2){
-            return count.first;
+        if(count == 0){
+            element = arr[i];
+        }
+        if(element == arr[i]){
+            count++;
+        }
+        else{
+            count--;
         }
     }
-    return -1;
+    return element;
 }
 
 int main(){
-    vector<int> arr = {2, 2, 1, 1};
+    vector<int> arr = {2, 2, 1, 1, 1};
 
     int sum = 5;
     int result;
@@ -30,4 +32,4 @@ int main(){
     return 0;
 
 
-}jnjcc
+}
