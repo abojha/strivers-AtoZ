@@ -17,11 +17,11 @@ vector<int> twoSum(vector<int> &arr, int k){
             left++;
         }
         else if(sum > k){
-            right++;
+            right--;
         }
         else{
-            result.push_back(left);
-            result.push_back(right);
+            result.push_back(arr[left]);
+            result.push_back(arr[right]);
             return result;
         }
     }
